@@ -1,6 +1,7 @@
 class person {
     constructor(name, charClass) {
         this.possibleWeapons = ["sword", "wand", "club", "Spear", "slingShot", "pistol"];
+        var bodyPartPossibilities = ["head", "chest", "legs"];
         this.hasWeapon = false;
         this.name = name;
         this.charClass = charClass;
@@ -38,6 +39,10 @@ class person {
         }
     }
 
+    equipArmor(part) {
+
+    }
+
     dropWeapon() {
         $(".console").text(`${currentplayer} has dropped his ${this.weapon.name}`);
         this.hasWeapon = false;
@@ -51,15 +56,9 @@ class person {
         return this.hasWeapon;
     }
 
-    checkArmor() {
+    getArmor() {
         //do later
     }
-
-    equipArmor() {
-
-    }
-
-
 
 
 }

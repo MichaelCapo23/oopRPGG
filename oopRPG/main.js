@@ -1,7 +1,11 @@
 $(document).ready(startApp);
-
+var player1;
+var player2;
 function startApp() {
     domCreate();
+    player1 = new person(player1, "mage");
+    player2 = new person(player2, "warrior");
+    addClickHandlersToElements();
 }
 function domCreate() {
     var consoleDiv = $("<div>", {
@@ -25,7 +29,7 @@ function domCreate() {
     var player2Inputs = $("<input>", {
         class : "player2Inputs"
     });
-    
+
 
     $(".console").append(consoleDiv);
     $(".gameArea").append(player1Indicator).append(player2Indicator);
@@ -33,19 +37,58 @@ function domCreate() {
     player2Indicator.append(player2Inputs);
 }
 
-function takeInInput() {
-    var possibleWeapons = ["sword", "wand", "club", "Spear", "slingShot", "pistol"];
-    var bodyPartPossibilities = ["head", "chest", "legs"];
-    var possibleSpells = [];
-    var userInput = $(".console").val();
-    if(possibleWeapons.indexOf(userInput) > -1) {
-        createWeapon(userInput);
-    } else if(bodyPartPossibilities.indexOf(userInput) > -1) {
-        createArmor(userInput)
-    } else if(possibleSpells.indexOf(userInput) > -1) {
-        createSpell(userInput);
-    } else {
-        console.log("Invalid input");
-    }
+function addClickHandlersToElements() {
+    $(".p1").on("click", takeInInput("p1"));
+    $(".p2").on("click", takeInInput("p2"));
+}
 
+function takeInInput(button) {
+    if (button === "p1") {
+        var possibleWeapons = ["sword", "wand", "club", "Spear", "slingShot", "pistol"];
+        var bodyPartPossibilities = ["head", "chest", "legs"];
+        var possibleSpells = [];
+        if (possibleWeapons.indexOf(userInput) > -1) {
+            var weapon = createWeapon(userInput);
+            player1.equipWeapon(weapon);
+        } else if (bodyPartPossibilities.indexOf(userInput) > -1) {
+            var armor = createArmor(userInput);
+            player1.equipArmor(armor);
+        } else if (possibleSpells.indexOf(userInput) > -1) {
+            var spell = createSpell(userInput);
+            player1.equipSpell(spell);
+        } else {
+            console.log("Invalid input");
+        }
+    } else {
+        var possibleWeapons = ["sword", "wand", "club", "Spear", "slingShot", "pistol"];
+        var bodyPartPossibilities = ["head", "chest", "legs"];
+        var possibleSpells = [];
+        if (possibleWeapons.indexOf(userInput) > -1) {
+            var weapon = createWeapon(userInput);
+            player2.equipWeapon(weapon);
+        } else if (bodyPartPossibilities.indexOf(userInput) > -1) {
+            var armor = createArmor(userInput);
+            player2.equipArmor(armor);
+        } else if (possibleSpells.indexOf(userInput) > -1) {
+            var spell = createSpell(userInput);
+            player2.equipSpell(spell);
+        } else {
+            console.log("Invalid input");
+        }
+    }
+}
+
+function createWeapon(userInput) {
+    var weapon = new weapon(userInput);
+    return weapon;
+}
+
+function createArmor(userInput) {
+    var armor = new armor(userInput);
+    return armor;
+}
+
+function createSpell(userInput) {
+    var spell = new spell(userInput);
+    return spell;
 }
