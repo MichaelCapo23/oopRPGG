@@ -8,7 +8,6 @@ body {
     width: 100%;
     font-size: 8rem;
     display: block;
-    background-color: #007BFf;
     text-align: center;
     margin-bottom: 10%;
 }
@@ -41,4 +40,16 @@ body {
     width: 30%;
     display: inline-block;
     font-size: 2rem;
+}
+
+.button {
+    height: 10%;
+    width: 10%;
+    color: white;
+    text-align: center;
+    display: block;
+    position: relative;
+    left: 45vw;
+    background-color: lightgreen;
+    font-size: 1.5rem;
 }

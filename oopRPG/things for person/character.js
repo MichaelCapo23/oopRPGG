@@ -33,16 +33,30 @@ class person {
                 this.weapon.handCount = weapon.handCount;
                 this.weapon.weight = weapon.weight;
                 this.weapon.damage = weapon.damage;
+                $(".console").text(`${currentplayer} has equipped a ${this.weapon.name}`);
             }
         }
     }
 
     dropWeapon() {
+        $(".console").text(`${currentplayer} has dropped his ${this.weapon.name}`);
         this.hasWeapon = false;
         this.weapon.name = null;
         this.weapon.handCount = null;
         this.weapon.weight = null;
         this.weapon.damage = null;
+    }
+
+    checkIfWeaponEquip() {
+        return this.hasWeapon;
+    }
+
+    checkArmor() {
+        //do later
+    }
+
+    equipArmor() {
+
     }
 
 
