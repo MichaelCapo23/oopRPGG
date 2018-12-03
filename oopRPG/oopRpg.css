@@ -3,30 +3,42 @@ body {
     width: 100vw;
 }
 
+.console {
+    height: 10%;
+    width: 100%;
+    font-size: 8rem;
+    display: block;
+    background-color: #007BFf;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
 .player1Indicator {
     height: 15%;
-    width: 15%;
+    width: 50%;
     display: inline-block;
     font-size: 2rem;
+    text-align: center;
 }
 
 .player2Indicator {
     height: 15%;
-    width: 15%;
+    width: 50%;
     display: inline-block;
     font-size: 2rem;
+    text-align: center;
 }
 
 .player1Inputs {
     height: 15%;
-    width: 15%;
+    width: 30%;
     display: inline-block;
     font-size: 2rem;
 }
 
 .player2Inputs {
     height: 15%;
-    width: 15%;
+    width: 30%;
     display: inline-block;
     font-size: 2rem;
 }
