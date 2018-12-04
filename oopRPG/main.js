@@ -38,12 +38,12 @@ function domCreate() {
 }
 
 function addClickHandlersToElements() {
-    $(".p1").on("click", takeInInput("p1"));
-    $(".p2").on("click", takeInInput("p2"));
+    $("body").on("click", ".button", takeInInput);
 }
 
-function takeInInput(button) {
-    if (button === "p1") {
+function takeInInput() {
+    var userInput = $("button");
+    if (this.hasClass("p1")) {
         var possibleWeapons = ["sword", "wand", "club", "Spear", "slingShot", "pistol"];
         var bodyPartPossibilities = ["head", "chest", "legs"];
         var possibleSpells = [];
