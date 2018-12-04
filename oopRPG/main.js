@@ -44,9 +44,9 @@ function addClickHandlersToElements() {
 function takeInInput() {
     var userInput = $("button");
     if (this.hasClass("p1")) {
-        var possibleWeapons = ["sword", "wand", "club", "Spear", "slingShot", "pistol"];
+        var possibleWeapons = ["sword", "wand", "club", "Spear", "slingShot"];
         var bodyPartPossibilities = ["head", "chest", "legs"];
-        var possibleSpells = [];
+        var possibleSpells = ["frost", "anti", "fire"];
         if (possibleWeapons.indexOf(userInput) > -1) {
             var weapon = createWeapon(userInput);
             player1.equipWeapon(weapon);
@@ -62,7 +62,7 @@ function takeInInput() {
     } else {
         var possibleWeapons = ["sword", "wand", "club", "Spear", "slingShot", "pistol"];
         var bodyPartPossibilities = ["head", "chest", "legs"];
-        var possibleSpells = [];
+        possibleSpells = ["frost", "anti", "fire"];
         if (possibleWeapons.indexOf(userInput) > -1) {
             var weapon = createWeapon(userInput);
             player2.equipWeapon(weapon);

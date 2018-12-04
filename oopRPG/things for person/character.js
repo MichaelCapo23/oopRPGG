@@ -1,45 +1,18 @@
 class person {
     constructor(name, charClass) {
-        this.possibleWeapons = ["sword", "wand", "club", "Spear", "slingShot", "pistol"];
+        this.possibleWeapons = ["sword", "wand", "club", "Spear", "slingShot"];
         var bodyPartPossibilities = ["head", "chest", "legs"];
+        var possibleSpells = ["frost", "anti", "fire"];
         this.hasWeapon = false;
         this.name = name;
         this.charClass = charClass;
-        this.armor = {};
-        this.armor.head = {
-            weight: null,
-            nullification: null,
-        };
-        this.armor.chest = {
-            weight: null,
-            nullification: null,
-        };
-        this.armor.legs = {
-            weight: null,
-            nullification: null,
-        };
-
-        this.weapon = {
-            name: null,
-            handCount: null,
-            weight: null,
-            damage: null,
-        };
-
-        this.spell = {
-            name: null,
-            type: null,
-            weight: null,
-            spellDamage: null
-        };
-
+        this.spellCount = 0;
         this.stats = {
             dexterity: null,
             strength: null,
             weakness: null
         }
     }
-
 
     equipWeapon(weapon) {
         for (var Pweapon in this.possibleWeapons) {
@@ -64,15 +37,6 @@ class person {
         }
     }
 
-    dropWeapon() {
-        $(".console").text(`${currentplayer} has dropped his ${this.weapon.name}`);
-        this.hasWeapon = false;
-        this.weapon.name = null;
-        this.weapon.handCount = null;
-        this.weapon.weight = null;
-        this.weapon.damage = null;
-    }
-
     checkIfWeaponEquip() {
         return this.hasWeapon;
     }
@@ -81,4 +45,11 @@ class person {
         //do later
     }
 
+    getSpells() {
+        return this.spellCount;
+    }
+
+    getFireSpells() {
+        return this.spell.fire.count;
+    }
 }
