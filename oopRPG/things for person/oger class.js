@@ -1,0 +1,3 @@
+class Oger extends person {
+
+}

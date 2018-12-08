@@ -30,10 +30,13 @@ class person {
     equipArmor(part) {
         if (part === "head") {
             this.armor.head.nullification = 3;
-            this.armor.head.weight = 3;
+            this.armor.head.weight = 2;
         } else if(part === "chest") {
-            this.armor.chest.nullification = 3;
-            this.armor.chest.weight = 3;
+            this.armor.chest.nullification = 2;
+            this.armor.chest.weight = 2;
+        } else {
+            this.armor.legs.nullification = 1;
+            this.armor.weight = 2;
         }
     }
 
@@ -41,8 +44,16 @@ class person {
         return this.hasWeapon;
     }
 
-    getArmor() {
-        //do later
+    getArmorHead() {
+        return this.armor.head;
+    }
+
+    getArmorChest() {
+        return this.armor.chest;
+    }
+
+    getArmorLegs() {
+        return this.armor.legs;
     }
 
     getSpells() {
@@ -51,5 +62,13 @@ class person {
 
     getFireSpells() {
         return this.spell.fire.count;
+    }
+
+    getFrostSpells() {
+        return this.spell.frost.count;
+    }
+
+    getAntiSpells() {
+        return this.spell.anti.count;
     }
 }
